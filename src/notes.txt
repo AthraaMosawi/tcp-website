@@ -1,0 +1,189 @@
+// // import React from "react";
+// // import { Box, Paper } from "@mui/material";
+
+// // const Mission = () => {
+// //   return (
+// //     <Box
+// //       id="LayerRoot"
+// //       sx={{
+// //         overflow: "hidden",
+// //         position: "relative",
+// //         display: "flex",
+// //         flexDirection: "column",
+// //         width: "100%",
+// //         alignItems: "flex-end",
+// //         paddingTop: 20,
+// //         paddingBottom: 274,
+// //         paddingLeft: 415,
+// //         paddingRight: 415,
+// //       }}
+// //     >
+// //       <Box
+// //         sx={{
+// //           width: 1367,
+// //           height: 64,
+// //           backgroundImage: `url(https://file.rendit.io/n/QO3mfJQ89rnLUJXotws3.svg)`,
+// //           backgroundCover: true,
+// //           backgroundPosition: "50% 50%",
+// //           backgroundBlendMode: "normal",
+// //           backgroundRepeat: "no-repeat",
+// //           position: "absolute",
+// //           top: 8,
+// //           left: 0,
+// //           display: "flex",
+// //           flexDirection: "row",
+// //           justifyContent: "space-between",
+// //           alignItems: "flex-start",
+// //           paddingLeft: 48,
+// //           paddingRight: 24,
+// //           paddingTop: 1,
+// //           paddingBottom: 1,
+// //         }}
+// //       >
+// //         <img src="https://file.rendit.io/n/trLa0p0zewFUH8VsBjrx.svg" />
+// //         <Box
+// //           sx={{
+// //             alignSelf: "flex-end",
+// //             position: "relative",
+// //             display: "flex",
+// //             flexDirection: "column",
+// //             justifyContent: "flex-end",
+// //             marginTop: 20,
+// //             paddingTop: 16,
+// //             width: 40,
+// //             shrink: 0,
+// //             alignItems: "flex-start",
+// //           }}
+// //         >
+// //           <img src="https://file.rendit.io/n/nYLbyrxtvnXcibqnBNS9.svg" />
+// //           <Paper
+// //             sx={{
+// //               boxShadow: "0px 0px 10px 0px #000000",
+// //               width: 113,
+// //               height: 113,
+// //               position: "absolute",
+// //               top: 16,
+// //               left: 0,
+// //             }}
+// //           />
+// //           <img
+// //             src="https://file.rendit.io/n/NyZxIvQSnHVpOT2AQ8os.svg"
+// //             sx={{
+// //               backgroundImage: `url(https://file.rendit.io/n/fnIlMmtYvomgt0BN7mWi.svg)`,
+// //               backgroundCover: true,
+// //               backgroundPosition: "50% 50%",
+// //               backgroundBlendMode: "normal",
+// //               backgroundRepeat: "no-repeat",
+// //             }}
+// //           />
+// //         </Box>
+// //       </Box>
+// //       <img
+// //         src="https://file.rendit.io/n/VnorPRCZ5BoPJEvuPnW6.svg"
+// //         sx={{
+// //           width: 310,
+// //           height: 310,
+// //           position: "absolute",
+// //           top: 10,
+// //           left: 528.909912109375,
+// //         }}
+// //       />
+// //     </Box>
+// //   );
+// // };
+// // export default Mission;
+// import Paper from "@mui/material/Paper";
+// import Box from "@mui/material/Box";
+// import Typography from "@mui/material/Typography";
+
+// function Mission() {
+//   return (
+//     <Paper
+//       sx={{
+//         overflow: "hidden",
+//         display: "flex",
+//         flexDirection: "column",
+//         width: "100%",
+//         float: "left",
+//         alignItems: "flex-end",
+//         paddingTop: "20px",
+//         paddingBottom: "274px",
+//         // paddingLeft: "415px",
+//         backgroundColor: "transparent",
+//       }}
+//       elevation={0}
+//     >
+//       <Box
+//         sx={{
+//           position: "relative",
+//           width: "1367px",
+//           height: "64px",
+//           backgroundImage:
+//             "url(https://file.rendit.io/n/QO3mfJQ89rnLUJXotws3.svg)",
+//           backgroundSize: "cover",
+//           backgroundPosition: "50% 50%",
+//           backgroundBlendMode: "normal",
+//           backgroundRepeat: "no-repeat",
+//           top: "8px",
+//           left: "0",
+//           display: "flex",
+//           flexDirection: "row",
+//           justifyContent: "space-between",
+//           alignItems: "start",
+//           paddingLeft: "48px",
+//           paddingRight: "24px",
+//           paddingY: "1px", // Adjust this to control the vertical alignment
+//         }}
+//       >
+//         <img
+//           src="https://file.rendit.io/n/trLa0p0zewFUH8VsBjrx.svg"
+//           alt="Logo"
+//           className="mt-8"
+//           sx={{ marginTop: "8px" }}
+//         />
+//         <Box
+//           sx={{
+//             alignSelf: "flex-end",
+//             display: "flex",
+//             flexDirection: "column",
+//             justifyContent: "end",
+//             marginTop: "20px",
+//             paddingTop: "16px",
+//             width: "40px", // Adjust this width as needed
+//             flexShrink: 0,
+//             alignItems: "start",
+//           }}
+//         >
+//           <img
+//             src="https://file.rendit.io/n/nYLbyrxtvnXcibqnBNS9.svg"
+//             alt="Circle 1"
+//             className="w-32 h-32 absolute top-0 left-6"
+//             sx={{
+//               width: "32px",
+//               height: "32px",
+//               position: "absolute",
+//               top: "0",
+//               left: "6px",
+//             }}
+//           />
+//           {/* Add more elements here */}
+//         </Box>
+//       </Box>
+//       <img
+//         src="https://file.rendit.io/n/VnorPRCZ5BoPJEvuPnW6.svg"
+//         alt="Circle 2"
+//         className="w-[310px] h-[310px] absolute top-10 left-[528.909912109375px]"
+//         sx={{
+//           width: "310px",
+//           height: "310px",
+//           position: "absolute",
+//           top: "10px",
+//           left: "528.909912109375px",
+//         }}
+//       />
+//       {/* Add more elements here */}
+//     </Paper>
+//   );
+// }
+
+// export default Mission;

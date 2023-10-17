@@ -1,0 +1,268 @@
+/* .registration {
+  background-color: #01011e;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+} */
+
+.registration .div {
+    margin: 0;
+
+  background-color: #01011e;
+  height: 100vh;
+  position: relative;
+  width: 1512px;
+}
+
+.registration .group {
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 800px;
+}
+
+.registration .rectangle-wrapper {
+  height: 100vh;
+  position: relative;
+}
+
+.registration .rectangle {
+  height: 100vh;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 827px;
+}
+
+.registration .group-2 {
+  height: 100vh;
+  left: 901px;
+  position: absolute;
+  top: 60px;
+  width: 442px;
+}
+
+.registration .group-3 {
+  height: 67px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 294px;
+}
+
+.registration .text-wrapper {
+  color: #ffffff;
+  font-family: "Gilroy-Bold-☞", Helvetica;
+  font-size: 32px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0.64px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.registration .text-wrapper-2 {
+  color: #8d8d8d;
+  font-family: "Gilroy-Light-☞", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 0;
+  letter-spacing: 0.32px;
+  line-height: normal;
+  position: absolute;
+  top: 48px;
+  white-space: nowrap;
+}
+
+.registration .already-have-an {
+  color: transparent;
+  font-family: "Gilroy-Medium-Regular", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 66px;
+  letter-spacing: 0.32px;
+  line-height: normal;
+  position: absolute;
+  top: 620px;
+}
+
+.registration .span {
+  color: #ffffff;
+}
+
+.registration .text-wrapper-3 {
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+}
+
+.registration .text-wrapper-4 {
+  color: #17c8be;
+  font-size: 20px;
+  letter-spacing: 0.4px;
+}
+
+.registration .overlap {
+  height: 459px;
+  left: 0;
+  position: absolute;
+  top: 140px;
+  width: 440px;
+}
+
+.registration .group-4 {
+  height: 459px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 440px;
+}
+
+.registration .group-5 {
+  height: 240px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 440px;
+}
+
+.registration .group-6 {
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 442px;
+}
+
+.registration .text-wrapper-5 {
+  color: #ffffff;
+  font-family: "Gilroy-Medium-☞", Helvetica;
+  font-size: 16px;
+  font-weight: 400;
+  left: 0;
+  margin-top: 20px;
+  letter-spacing: 0.32px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.registration .line {
+color: #ffffff;
+  position: absolute;
+  outline: none;
+  top: 29px;
+  width: 440px;
+  padding: 12px 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  background-color: transparent;
+  font-size: large;
+}
+.registration .line:focus {
+    border-bottom: 1px solid #17c8be;
+    box-shadow: 0 1px 0 0 #17c8be;
+  }
+
+.registration .group-7 {
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 90px;
+  width: 442px;
+}
+
+.registration .group-8 {
+  height: 60px;
+  left: 0;
+  position: absolute;
+  top: 180px;
+  width: 442px;
+}
+
+.registration .group-wrapper {
+  height: 65px;
+  left: 0;
+  position: absolute;
+  top: 394px;
+  width: 435px;
+}
+
+.registration .div-wrapper {
+  border: 1px solid;
+  border-color: #8d8d8d;
+  border-radius: 12px;
+  height: 65px;
+  color: #ffffff;
+  font-family: "Gilroy-SemiBold-☞", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  width: 437px;
+}
+
+.registration .group-9 {
+  height: 25px;
+  left: 92px;
+  position: relative;
+  top: 19px;
+  width: 239px;
+}
+
+.registration .text-wrapper-6 {
+  color: #ffffff;
+  font-family: "Gilroy-SemiBold-☞", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  left: 42px;
+  letter-spacing: 0.4px;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+}
+
+.registration .vector {
+  height: 24px;
+  left: 0;
+  position: absolute;
+  top: 1px;
+  width: 24px;
+}
+
+.registration .courses-button {
+  height: 68px;
+  left: 0;
+  position: absolute;
+  top: 306px;
+  width: 437px;
+}
+
+.registration .overlap-group {
+  background: linear-gradient(180deg, rgb(23, 200, 190) 0%, rgb(249, 213, 62) 100%);
+  border-radius: 8.4px;
+  height: 68px;
+  position: relative;
+  width: 435px;
+  color: #000000;
+  font-family: "Gilroy-SemiBold-☞", Helvetica;
+  font-size: 21.2px;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+/* /////////////////////////// */

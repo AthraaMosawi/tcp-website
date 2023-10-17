@@ -1,0 +1,12 @@
+
+.bioContainer {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    position: relative;
+}
+@media (max-width: 768px) {
+    .bioContainer{
+        width: 100px;
+    }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959.47 193.98">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #589bff;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke-miterlimit: 10;
+        stroke-width: 2.97px;
+      }
+
+      .cls-2 {
+        stroke: #ff5869;
+      }
+
+      .cls-3 {
+        stroke: #fff;
+      }
+
+      .cls-4 {
+        stroke: #17c8be;
+      }
+
+      .cls-5 {
+        fill: #ff5869;
+      }
+
+      .cls-6 {
+        fill: #ffd100;
+      }
+
+      .cls-7 {
+        fill: #7347ff;
+      }
+
+      .cls-8 {
+        fill: #17c8be;
+      }
+
+      .cls-9 {
+        fill: #fff;
+      }
+
+      .cls-9, .cls-10 {
+        font-family: Gilroy-Regular, Gilroy-Regular;
+        font-size: 36px;
+      }
+
+      .cls-10 {
+        fill: #141020;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <rect class="cls-8" x="321.06" y="1.49" width="288.36" height="81.75" rx="40.88" ry="40.88"/>
+    <rect class="cls-7" x="103.3" y="2.23" width="199.18" height="81.75" rx="40.88" ry="40.88"/>
+    <rect class="cls-1" x="730.57" y="2.23" width="227.42" height="81.75" rx="40.88" ry="40.88"/>
+    <rect class="cls-6" x="482.34" y="110.74" width="352.28" height="81.75" rx="40.88" ry="40.88"/>
+    <rect class="cls-1" x="2.23" y="110.74" width="185.8" height="81.75" rx="40.88" ry="40.88"/>
+    <rect class="cls-4" x="207.35" y="110.74" width="157.56" height="81.75" rx="40.88" ry="40.88"/>
+    <rect class="cls-2" x="853.94" y="110.74" width="104.05" height="81.75" rx="40.88" ry="40.88"/>
+    <circle class="cls-2" cx="41.62" cy="41.62" r="40.13"/>
+    <circle class="cls-3" cx="669.62" cy="42.36" r="40.13"/>
+    <circle class="cls-3" cx="424.37" cy="152.36" r="40.13"/>
+    <text class="cls-9" transform="translate(122.17 53.43)"><tspan x="0" y="0">Unlocking</tspan></text>
+    <path class="cls-5" d="M49.34,31.92v6.16l-13.39,5.79,12.12,4.66,1.5,6.16-20.15-8.74v-5.29l19.91-8.74Z"/>
+    <g>
+      <path class="cls-5" d="M887.96,174.02h-2.62s18.4-41.38,18.4-41.38h2.62s-18.4,41.38-18.4,41.38Z"/>
+      <path class="cls-5" d="M909.95,141.92l20.13,8.74v5.25l-20.24,8.78,.11-6.16,13.38-5.2-13.39-5.24v-6.16Z"/>
+    </g>
+    <text class="cls-10" transform="translate(385.29 53.43)"><tspan x="0" y="0">The Code</tspan></text>
+    <text class="cls-10" transform="translate(529.9 163.42)"><tspan x="0" y="0">To Your Success</tspan></text>
+  </g>
+</svg>

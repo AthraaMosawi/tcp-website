@@ -1,0 +1,83 @@
+
+.container{
+    height: 574px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.overlap{
+    height: 358px;
+    position: relative;
+}
+.line-vector{
+    width: 100%;
+}
+.Sec-line-vector, .Third-line-vector{
+    display: none;
+}
+
+.red-vector{
+    position: relative;
+    bottom: 190px;
+    left: 6%;
+    width: 10%;
+}
+.turq-vector{
+    position: relative;
+    left: 32%;
+    bottom: 420px;
+    width: 10%;
+}
+.yellow-vector{
+    position: relative;
+    left: 58%;
+    bottom: 620px;
+    width: 10%;
+}
+.white-vector{
+    position: relative;
+    left: 83%;
+    bottom: 940px;
+    width: 10%;
+}
+@media (max-width: 768px){
+    .red-vector{
+        width: 30%;
+        left: 8%;
+        bottom: 100px;
+    }
+    .turq-vector{
+        width: 30%;
+        left: 58%;
+        bottom: 265px;
+    }
+    .yellow-vector{
+        left: 8%;
+        bottom: 220px;
+        width: 30%;
+    }
+    .white-vector{
+        left: 58%;
+        bottom: 300px;
+        width: 30%;
+    }
+    .vector-place{
+        position: relative;
+        bottom: 230px;
+    }
+    .container{
+        height: 880px;
+        width: 95%;
+    }
+    .Sec-line-vector{
+        display: block;
+        position: relative;
+        bottom: 180%;
+    }
+    .Third-line-vector{
+        display: block;
+        position: relative;
+        bottom: 270%;
+        z-index: -1;
+    }
+}

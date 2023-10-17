@@ -1,0 +1,26 @@
+.saying-section-title{
+    text-align: center;
+}
+.students-messages{
+    position: relative;
+    /* top: 300px; */
+}
+@media (max-width: 768px) {
+    .saying-section-title{
+        text-align: left;
+        width: 310px;
+        position: relative;
+        left: 40px;
+    }
+    .message{
+        font-size: 10px;
+    }
+    .students-messages{
+        margin-bottom: 60px;
+    }
+}
+@media (max-width: 576px) {
+    .message{
+        font-size: 8px;
+    }
+}

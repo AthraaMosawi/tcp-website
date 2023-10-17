@@ -1,0 +1,87 @@
+
+.courses-section-title{
+    font-family: "Gilroy-SemiBold";
+    line-height: 67.2px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sub-title{
+    line-height: 67.2px;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+}
+.courses-section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /* border: 1px solid rgb(0, 255, 110); */
+    gap: 16px;
+    width: 90%;
+    float:right;
+    margin-top: 40px;
+  }
+  
+  .courses-container {
+    /* border: 1px solid rgb(0, 17, 255); */
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    align-items: start;
+    justify-content: end;
+    gap: 16px;
+    width: 40%;
+    margin-bottom: 30px;
+  }
+  
+  .course-card {
+    width: 25%;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  
+  @media (max-width: 768px) {
+    .courses-section{
+        flex-direction: column;
+        float:none;
+        margin: 0 auto;
+    }
+    .courses-container {
+      width: 90%;
+      margin-bottom: 20px;
+      justify-content: center;
+    }
+  
+    .course-card {
+      width: 50%;
+      position: relative;
+      right: 200px;
+    }
+    .courses-section-title{
+        text-align: left;
+        /* border: 1px solid red; */
+        display: inline;
+        position: relative;
+      left: 70px;
+    }
+    .sub-title{
+        color: #17C8BE;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .course-card {
+      width: 100%;
+    }
+  }
+  .slider {
+    width: 100%;
+    overflow: hidden;
+  }
+  .card {
+    width: 25%;
+    margin: 10px;
+    box-sizing: border-box;
+  }
+  

@@ -1,0 +1,63 @@
+
+.book-section-des{
+    font-family: "Gilroy-Regular";
+    font-size: 20px;
+    line-height: 35px;
+    color: white;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+.layer{
+  text-align: center;
+}
+  
+  .layer .overlap-group {
+    height: 358px;
+    position: relative;
+    top: 23px;
+  }
+  
+  .layer .vector {
+    height: 259px;
+    left: 0;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+  }
+  
+  .layer .img {
+    height: 310px;
+    left: 529px;
+    position: absolute;
+    top: 17px;
+    width: 310px;
+  }
+  
+  .layer .vector-2 {
+    height: 124px;
+    left: 182px;
+    position: absolute;
+    top: 40px;
+    width: 124px;
+  }
+
+  @media (max-width: 768px) {
+    .mission-section-des{
+        width: 70%;
+        text-align: left;
+        top: 140px;
+    }
+  /* here start */
+  .layer{
+    top: 50px;
+  }
+
+      .layer .vector-2 {
+        height: 20%;
+        width: 20%;
+        left: 8%;
+        top: 100px;
+      }
+  }
