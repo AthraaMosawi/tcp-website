@@ -44,6 +44,7 @@ const BookSession = () => {
       <Button
         id="CoursesButton"
         variant="contained"
+        className="bookBtn"
         sx={{
           width: "150px",
           background:
@@ -57,6 +58,11 @@ const BookSession = () => {
             left: "35%",
             top: "230px",
             width: "28%",
+          },
+          [theme.breakpoints.up("lg")]: {
+            left: "45%",
+            top: "230px",
+            width: "10%",
           },
         }}
       >

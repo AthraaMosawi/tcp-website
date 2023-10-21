@@ -512,21 +512,21 @@ const Admin = () => {
           initialValues={initialValues}
           onSubmit={async (values) => {
             try {
-              const submitForm = document.getElementById("submitForm");
-              const formData = new FormData(submitForm);
+              console.log(values);
+              //   const formData = new FormData();
               //   for (const key in values) {
               //     formData.append(key, values[key]);
               //   }
-              const response = await axios.post(
-                "https://tcp-server-66641451cde5.herokuapp.com/courses",
-                formData,
-                {
-                  headers: {
-                    "Content-Type": "multipart/form-data",
-                  },
-                }
-              );
-              console.log("API response:", response.data);
+              //   const response = await axios.post(
+              //     "https://tcp-server-66641451cde5.herokuapp.com/courses",
+              //     formData,
+              //     {
+              //       headers: {
+              //         "Content-Type": "multipart/form-data",
+              //       },
+              //     }
+              //   );
+              //   console.log("API response:", response.data);
             } catch (error) {
               console.error("API request error:", error.response.data);
             }
@@ -562,46 +562,27 @@ const Admin = () => {
                   </div>
                   <div className="optionsStyle">
                     <label>Course Instructor</label>
-                    {/* <Field
-                      as="select"
-                      name="instructors"
-                      className="selectOptions"
-                    >
-                      <option value="" disabled>
-                        Select an instructor
-                      </option>
-                      {employees?.map(
-                        (employee) => console.log(employee.roles[0].roleName)
-                        // employee.roles[0].roleName === "Instructor" ? (
-                        //   <option key={employee.id} value={employee.id}>
-                        //     {employee.fullName}
-                        //   </option>
-                        // ) : (
-                        //   "Loading..."
-                        // )
-                      )}
-                    </Field> */}
                     <Field
                       as="select"
                       name="instructors[0]"
                       className="selectOptions"
                     >
                       <option value="test">Select an instructor</option>
-                      {/* {employees?.map((employee) => {
+                      {employees?.map((employee) => {
                         if (
                           employee.roles.some(
                             (role) => role.roleName === "Instructor"
                           )
                         ) {
                           return (
-                            <option key={employee.id} value={employee.id}>
+                            <option key={employee.id} value={[employee.id]}>
                               {employee.fullName}
                             </option>
                           );
                         } else {
                           return null;
                         }
-                      })} */}
+                      })}
                     </Field>
                   </div>
                   <div className="optionsStyle">
