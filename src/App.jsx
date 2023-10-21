@@ -1,7 +1,7 @@
-import { Route, Routes, Switch, Redirect, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
 import "./Style/registration.css";
 import "./Style/home.css";
+import ComingSoon from "./Pages/ComingSoon";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
@@ -52,19 +52,7 @@ function App() {
             </EmployeesData>
           }
         />
-        {/* <ProtectedRoute
-          path="/admin"
-          element={
-            <EmployeesData>
-              <Admin />
-            </EmployeesData>
-          }
-        /> */}
-        {/* <Route path="/admin" element={<ProtectedRoute />}>
-          <EmployeesData>
-            <Admin />
-          </EmployeesData>
-        </Route> */}
+        <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
       <Footer />
     </>

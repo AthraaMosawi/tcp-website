@@ -1,11 +1,15 @@
 import React from "react";
 import { Box, Button, Typography, Paper, Container } from "@mui/material";
-import jsDeveloper from "../Assets/images/js-developer.jpg";
+import { Link } from "react-router-dom";
+// import jsDeveloper from "../Assets/images/js-developer.jpg";
 import "../Style/jsCourse.css";
 import { useTheme } from "@mui/material/styles";
 
 function CourseHeroSec({ course }) {
   const theme = useTheme();
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Container>
       <Box
@@ -48,7 +52,7 @@ function CourseHeroSec({ course }) {
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              width: "70%",
+              width: "85%",
               [theme.breakpoints.down("sm")]: {
                 width: "80%",
               },
@@ -115,34 +119,41 @@ function CourseHeroSec({ course }) {
               alignItems: "center",
             }}
           >
-            <Button
-              variant="contained"
-              sx={{
-                background: "linear-gradient(90deg, #17c8be 0%, #f9d53e 100%)",
-                padding: "0.5rem 1rem",
-                borderRadius: "0.5rem",
-                width: "auto",
-                [theme.breakpoints.down("sm")]: {
-                  marginBottom: "20px",
-                },
-              }}
+            <Link
+              to="/coming-soon"
+              style={{ textDecoration: "none" }}
+              onClick={scrollToTop}
             >
-              <Typography
-                variant="h4"
+              <Button
+                variant="contained"
                 sx={{
-                  fontSize: "1rem",
-                  fontFamily: "Gilroy-SemiBold",
-                  textAlign: "center",
-                  color: "#01011E",
+                  background:
+                    "linear-gradient(90deg, #17c8be 0%, #f9d53e 100%)",
+                  padding: "0.5rem 1rem",
+                  borderRadius: "0.5rem",
+                  width: "auto",
                   [theme.breakpoints.down("sm")]: {
-                    fontSize: ".8rem",
+                    marginBottom: "20px",
                   },
                 }}
               >
-                Apply Now!
-              </Typography>
-            </Button>
-            <Button
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontSize: "1rem",
+                    fontFamily: "Gilroy-SemiBold",
+                    textAlign: "center",
+                    color: "#01011E",
+                    [theme.breakpoints.down("sm")]: {
+                      fontSize: ".8rem",
+                    },
+                  }}
+                >
+                  Apply Now!
+                </Typography>
+              </Button>
+            </Link>
+            {/* <Button
               variant="outlined"
               sx={{
                 border: "1px solid #f2f2f2",
@@ -168,7 +179,7 @@ function CourseHeroSec({ course }) {
               >
                 Download Syllabus
               </Typography>
-            </Button>
+            </Button> */}
           </Box>
         </Box>
         {/* second one */}

@@ -17,7 +17,7 @@ export default function GainFeatures({ course }) {
               fontFamily: "Gilroy-Medium",
               textAlign: "left",
               width: "80%",
-              margin: "0px auto",
+              margin: "60px auto",
               [theme.breakpoints.down("sm")]: {
                 fontSize: "1.5rem",
                 marginBottom: "40px",
