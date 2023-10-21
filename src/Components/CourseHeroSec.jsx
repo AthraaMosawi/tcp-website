@@ -41,7 +41,7 @@ function CourseHeroSec({ course }) {
             }}
           >
             Launch your career with our <br />
-            <span style={{ color: "#f9d53e" }}>{course.name}</span>
+            <span style={{ color: "#f9d53e" }}>{course.courseName}</span>
           </Typography>
           <Box
             sx={{
@@ -186,7 +186,7 @@ function CourseHeroSec({ course }) {
           }}
         >
           <img
-            src={jsDeveloper}
+            src={course.courseDetailImg}
             alt="Software Developer"
             className="imgStyle"
           />
@@ -242,7 +242,7 @@ function CourseHeroSec({ course }) {
                   },
                 }}
               >
-                {course.name}
+                {course.courseName}
               </Typography>
               <div
                 sx={{
@@ -275,7 +275,7 @@ function CourseHeroSec({ course }) {
                     },
                   }}
                 >
-                  {course.studentNumber}
+                  {course.maxSeats} Students
                 </Typography>
                 <img
                   src="https://file.rendit.io/n/aEYtIzuoPfan9LYyHN4C.svg"

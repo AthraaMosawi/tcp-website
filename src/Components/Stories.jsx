@@ -1,4 +1,4 @@
-import image from "../Assets/images/girl3.png";
+import image from "../Assets/images/haneen.png";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -117,14 +117,18 @@ export default function Stories() {
         <CardMedia
           component="img"
           sx={{
-            maxWidth: "800px",
+            width: "1900px",
             height: "400px",
             [theme.breakpoints.down("sm")]: {
-              height: "350px",
+              height: "500px",
+              width: "2900px",
             },
           }}
           image={image}
           alt="student"
+          style={{
+            maxWidth: "100%",
+          }}
         />
       </Card>
     </>

@@ -1,0 +1,157 @@
+form{
+    margin: 0;
+    width: 100%;
+}
+button{
+    position: relative;
+    top: 0;
+}
+input{
+    padding: 0;
+    height: 50px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 6px;
+}
+.selectOptions{
+    height: 50px;
+    font-size: 16px;
+    border-radius: 6px;
+    /* margin-top: 5px; */
+}
+.submitBtn{
+    margin-top: 30px;
+}
+.admin-container{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 80%;
+    margin: 40px auto;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.dashboardContainer{
+    width: 70%;
+}
+.coursesDashboard{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    gap: 12px;
+}
+
+.line{
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: .7px solid white;
+}
+
+.coursesLeftSide{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 48%;
+}
+.coursesRightSide{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 48%;
+}
+/* .fieldArrayStyle{
+    border: 1px solid red;
+} */
+.fieldArrayInput{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.fieldArrayInput input{
+    margin: 0;
+    border-radius: 6px;
+}
+.fieldArrayInput .arrayField{
+    width: 83%;
+}
+.addBtn{
+    position: relative;
+    top: 0;
+}
+.inputfile{
+    /* background-color: blueviolet; */
+    font-size: 16px;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+input[type="file"]{
+    width: 60%;
+    /* border: 1px solid red; */
+    margin: 0;
+    padding-top: 9px;
+}
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: #F9D53D;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    transition: background-color 200ms;
+  }
+  
+  /* file upload button hover state */
+  input[type="file"]::file-selector-button:hover {
+    background-color: #f3f4f6;
+  }
+  
+  /* file upload button active state */
+  input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+  }
+  .optionsStyle{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  .optionsStyle label{
+    margin-bottom: 5px;
+  }
+
+
+@media (max-width: 768px) {
+    .admin-container{
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        margin: 70px auto;
+    }
+    .dashboardContainer{
+        width: 90%;
+    }
+    .coursesDashboard{
+        width: 100%;
+        flex-direction: column;
+    }
+    .line{
+        border-bottom: .4px solid white;
+    }
+    .coursesLeftSide, .coursesRightSide{
+        width: 100%;
+    }
+    .fieldArrayInput .arrayField{
+        width: 70%;
+    }
+    .addBtn{
+        width: 20%;
+    }
+
+}

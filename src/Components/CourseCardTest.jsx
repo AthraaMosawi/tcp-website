@@ -10,12 +10,15 @@ import {
   Typography,
 } from "@mui/material";
 import Context from "../Store/filteredData";
+import CoursesContext from "../Store/coursesData";
 
-import courses from "../Store/courses";
+// import courses from "../Store/courses";
 import { useTheme } from "@mui/material/styles";
 
 const CourseCardTest = ({ customStyles }) => {
+  const { courses } = useContext(CoursesContext);
   const { filteredCourses, notFound, searchValue } = useContext(Context);
+
   console.log(filteredCourses, searchValue);
 
   const theme = useTheme();
@@ -57,7 +60,7 @@ const CourseCardTest = ({ customStyles }) => {
               component="img"
               height="200"
               image={course.image}
-              alt="JavaScript"
+              alt={course.courseName}
               sx={{
                 borderRadius: "3px",
                 width: "90px",
@@ -140,7 +143,7 @@ const CourseCardTest = ({ customStyles }) => {
                   color="white"
                   fontFamily="Gilroy-Regular"
                 >
-                  {course.name}
+                  {course.courseName}
                 </Typography>
               }
             />
@@ -174,11 +177,12 @@ const CourseCardTest = ({ customStyles }) => {
                   }}
                 >
                   <img
-                    src={
-                      course.name === "JavaScript Bootcamp"
-                        ? "https://avatars.githubusercontent.com/u/79381866?v=4"
-                        : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-goog/avatars/zahraa_m_a_baharaluloom_yzEvX99.JPG"
-                    }
+                    // src={
+                    //   course.courseName === "JavaScript Bootcamp"
+                    //     ? "https://avatars.githubusercontent.com/u/79381866?v=4"
+                    //     : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-goog/avatars/zahraa_m_a_baharaluloom_yzEvX99.JPG"
+                    // }
+                    src={course.instructors[0].image}
                     alt="Ellipse"
                     style={{
                       width: "35px",
@@ -195,10 +199,12 @@ const CourseCardTest = ({ customStyles }) => {
                     }}
                   >
                     {/* Zahraa M. Ali */}
-                    {course.name === "JavaScript Bootcamp"
+                    {/* {course.courseName === "JavaScript Bootcamp"
                       ? "Alhasan Ali"
                       : "Zahraa M. Ali"}
-                    <br />{" "}
+                    <br />{" "} */}
+                    {course.instructors[0].fullName}
+                    <br />
                     <span style={{ fontSize: "10px" }}>
                       Full Stack Developer
                     </span>
@@ -221,7 +227,7 @@ const CourseCardTest = ({ customStyles }) => {
                     color="white"
                     fontFamily="Gilroy-Regular"
                   >
-                    10 Student
+                    {course.maxSeats} Student
                   </Typography>
                 </Box>
               </Box>

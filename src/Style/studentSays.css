@@ -5,6 +5,9 @@
     position: relative;
     /* top: 300px; */
 }
+.Cardimage{
+    width: 80%;
+}
 @media (max-width: 768px) {
     .saying-section-title{
         text-align: left;

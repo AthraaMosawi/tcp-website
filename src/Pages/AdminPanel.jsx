@@ -5,6 +5,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useDropzone } from "react-dropzone";
 import { useTheme } from "@mui/material/styles";
+import { useFormik } from "formik";
+import axios from "axios";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Course Name is required"),
@@ -20,15 +22,19 @@ const validationSchema = Yup.object().shape({
       "fileType",
       "Unsupported file type",
       (value) =>
-        value && ["image/jpeg", "image/jpg", "image/png"].includes(value.type)
+        value &&
+        ["image/jpeg", "image/jpg", "image/png", "image/svg"].includes(
+          value.type
+        )
     ),
 });
 
-const IconUploadField = ({ field, form }) => {
+const IconUploadField = ({ field }) => {
+  const formik = useFormik();
   const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/jpeg, image/jpg, image/png",
+    accept: "image/jpeg, image/jpg, image/png, image/svg",
     onDrop: (acceptedFiles) => {
-      form.setFieldValue(field.name, acceptedFiles[0]);
+      formik.setFieldValue(field.name, acceptedFiles[0]);
     },
   });
 
@@ -73,11 +79,12 @@ const IconUploadField = ({ field, form }) => {
 };
 
 //course Image
-const ImageUploadField = ({ field, form }) => {
+const ImageUploadField = ({ field }) => {
+  const formik = useFormik();
   const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/jpeg, image/jpg, image/png",
+    accept: "image/jpeg, image/jpg, image/png, image/svg",
     onDrop: (acceptedFiles) => {
-      form.setFieldValue(field.name, acceptedFiles[0]);
+      formik.setFieldValue(field.name, acceptedFiles[0]);
     },
   });
 
@@ -125,33 +132,49 @@ const AdminPanel = () => {
 
   const handleSubmit = async (values, { resetForm }) => {
     console.log(values);
-    // Form data to send to the API
+    //for (const key in courses) {
+    //   formData.append(key, course[key]);
+    // }
     const formData = new FormData();
     formData.append("courseName", values.courseName);
     formData.append("description", values.description);
-    if (values.courseImage) {
-      formData.append("courseImage", values.courseImage);
-    }
+    formData.append("courseDetailImg", values.courseDetailImg);
+    formData.append("image", values.image);
+    formData.append("status", values.status);
+    formData.append("startingDate", values.startingDate);
+    formData.append("duration", values.duration);
+    formData.append("fees", values.fees);
+    formData.append("level", values.level);
+    formData.append("maxSeats", values.maxSeats);
+    formData.append("outlines", values.outlines);
+    formData.append("eligibilityCriteria", values.eligibilityCriteria);
+    formData.append("courseBenefits", values.courseBenefits);
+    formData.append("numberOfLessons", values.numberOfLessons);
+    // for (const key in Courses) formData.append(key, newCourse[key]);
+    // const res = await axios.post(`/courses`, formData);
+    // this.courses.push(res.data);
 
-    // Send formData to your API using fetch or Axios
     try {
-      const response = await fetch("your-api-endpoint", {
-        method: "POST",
-        body: formData,
-      });
-
+      const response = await fetch(
+        "https://tcp-server-66641451cde5.herokuapp.com/courses",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
       if (response.ok) {
-        // Handle success, reset the form, show a success message, etc.
+        console.log("Done", response);
         resetForm();
       } else {
-        // Handle API errors
+        console.log("api error");
       }
     } catch (error) {
-      // Handle network errors
+      console.log(error);
     }
   };
 
   return (
+    //main container
     <Box
       sx={{
         display: "flex",
@@ -169,6 +192,7 @@ const AdminPanel = () => {
         },
       }}
     >
+      {/* sidebar container */}
       <Box
         id="Component"
         sx={{
@@ -236,14 +260,6 @@ const AdminPanel = () => {
               },
             }}
           >
-            {/* <Box
-              sx={{
-                display: "flex",
-                border: "1px solid red",
-                flexDirection: "column",
-                gap: "30px",
-              }}
-            > */}
             <Box
               sx={{
                 display: "flex",
@@ -316,7 +332,6 @@ const AdminPanel = () => {
               />
               <Typography id="Text4">Admins</Typography>
             </Box>
-            {/* </Box> */}
           </Box>
         </Box>
         {/* //sign out section */}
@@ -340,6 +355,9 @@ const AdminPanel = () => {
           <Typography id="Text5">Sign out</Typography>
         </Box>
       </Box>
+      {/* end sidebar container */}
+
+      {/* courses dashboard container */}
       <Box
         sx={{
           display: "flex",
@@ -395,6 +413,7 @@ const AdminPanel = () => {
             All Courses
           </Button>
         </Box>
+        {/* Line */}
         <Box
           sx={{
             width: "100%",
@@ -406,28 +425,29 @@ const AdminPanel = () => {
             },
           }}
         />
+        {/* end Line */}
         <>
           <Formik
             initialValues={{
-              iconImage: null,
-              courseImage: null,
+              image: null,
+              courseDetailImg: null,
               courseName: "",
-              studentNumber: "",
+              maxSeats: "",
               description: "",
-              instructor1: "",
-              instructor2: "",
-              courseFee: "",
+              numberOfLessons: "",
+              instructors: [],
+              fees: "",
               status: "",
               level: "",
               startingDate: "",
               duration: "",
-              eligibilityCriteria: "",
-              courseGains: "",
-              outlines: "",
+              eligibilityCriteria: [],
+              courseBenefits: [],
+              outlines: [],
             }}
             onSubmit={(values, { resetForm }) => {
               console.log(values);
-              // sendEmail(values); // Send email with form data
+              handleSubmit(values);
               resetForm();
             }}
             validationSchema={validationSchema}
@@ -435,7 +455,7 @@ const AdminPanel = () => {
             {({ values, touched, errors, handleChange }) => (
               <Form
                 // className="form"
-                // onSubmit={Formik.handleSubmit}
+                // onSubmit={handleSubmit}
                 encType="multipart/form-data"
               >
                 <Box
@@ -465,7 +485,18 @@ const AdminPanel = () => {
                       },
                     }}
                   >
-                    <Field name="courseImage" component={ImageUploadField} />
+                    {/* <Field
+                      name="courseDetailImg"
+                      component={ImageUploadField}
+                    /> */}
+                    <TextField
+                      required
+                      onChange={handleChange}
+                      name="image"
+                      type="file"
+                      className="form-control"
+                    />
+
                     <Box
                       sx={{
                         width: "100%",
@@ -576,8 +607,9 @@ const AdminPanel = () => {
                       },
                     }}
                   >
-                    <Field name="iconImage" component={IconUploadField} />
-                    <Box
+                    <Field name="image" component={IconUploadField} />
+                    <TextField type="file"></TextField>
+                    {/* <Box
                       sx={{
                         width: "100%",
                         display: "flex",
@@ -611,7 +643,7 @@ const AdminPanel = () => {
                         required
                         helperText={errors.instructor2}
                       />
-                    </Box>
+                    </Box> */}
                     <Box
                       sx={{
                         width: "100%",
@@ -622,27 +654,27 @@ const AdminPanel = () => {
                       <TextField
                         className="inputsStyle"
                         label="Course Fee"
-                        name="courseFee"
+                        name="fees"
                         variant="filled"
                         margin="dense"
-                        value={values.courseFee}
+                        value={values.fees}
                         onChange={handleChange}
-                        error={errors.courseFee && touched.courseFee}
+                        error={errors.fees && touched.fees}
                         required
-                        helperText={errors.courseFee}
+                        helperText={errors.fees}
                         sx={{ width: "48%" }}
                       />
                       <TextField
                         className="inputsStyle"
                         label="Student Number"
-                        name="studentNumber"
+                        name="maxSeats"
                         variant="filled"
                         margin="dense"
-                        value={values.studentNumber}
+                        value={values.maxSeats}
                         onChange={handleChange}
-                        error={errors.studentNumber && touched.studentNumber}
+                        error={errors.maxSeats && touched.maxSeats}
                         required
-                        helperText={errors.studentNumber}
+                        helperText={errors.maxSeats}
                         sx={{ width: "48%" }}
                       />
                     </Box>
@@ -697,14 +729,14 @@ const AdminPanel = () => {
                   <TextField
                     className="inputsStyle"
                     label="What you will gain?"
-                    name="courseGains"
+                    name="courseBenefits"
                     variant="filled"
                     margin="dense"
-                    value={values.courseGains}
+                    value={values.courseBenefits}
                     onChange={handleChange}
-                    error={errors.courseGains && touched.courseGains}
+                    error={errors.courseBenefits && touched.courseBenefits}
                     required
-                    helperText={errors.courseGains}
+                    helperText={errors.courseBenefits}
                     sx={{
                       width: "90%",
                       [theme.breakpoints.down("sm")]: {
@@ -824,6 +856,7 @@ const AdminPanel = () => {
                     background:
                       "linear-gradient(90deg, rgb(23, 200, 190) 0%, rgb(249, 213, 62) 100%)",
                   }}
+                  onClick={handleSubmit}
                 >
                   Submit
                 </Button>
@@ -832,11 +865,45 @@ const AdminPanel = () => {
           </Formik>
         </>
       </Box>
+      {/* End courses dashboard container */}
     </Box>
+    //end main container
   );
 };
 
 export default AdminPanel;
+
+// Input field
+// <input
+//                 required
+//                 onChange={handleImage}
+//                 name="image"
+//                 type="file"
+//                 className="form-control"
+//               />
+//             </div>
+// handling inputFile
+
+//     const handleImage = (event) =>
+//     setBook({ ...book, image: event.target.files[0] });
+
+// sendingData to BE
+//   const handleSubmit = (event) => {
+//       event.preventDefault();
+//       bookStore(book(;
+//       closeModal();
+//     };
+
+// Creating book
+//  createBook = async (newBook) => {
+//     try {
+//       const formData = new FormData();
+//       for (const key in newBook) formData.append(key, newBook[key]);
+//       const res = await axios.post(`/books`, formData);
+//       this.books.push(res.data);
+//     } catch (error) {
+//       console.log(error);
+//     }
 
 ///////////////////////////////////////////////////////
 

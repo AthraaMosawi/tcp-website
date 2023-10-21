@@ -1,11 +1,41 @@
 import React from "react";
+import { useState } from "react";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import { Navigate } from "react-router-dom";
 import { useTheme } from "@mui/material/styles";
+import axios from "axios";
+import jwtDecode from "jwt-decode";
 
 const Registration = () => {
   const theme = useTheme();
+
+  const [navigate, setNavigate] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPass] = useState("");
+
+  const userCredential = { email, password };
+  const submit = async () => {
+    try {
+      const userToken = await axios.post(
+        "https://tcp-server-66641451cde5.herokuapp.com/auth/signin",
+        userCredential
+      );
+      var token = userToken.data.token;
+      var decoded = jwtDecode(token);
+      document.localStorage = "userToken=" + decoded + "; expires=7; path=/";
+      axios.defaults.headers.common["Authorization"] = `Bearer ${userToken}`;
+
+      setNavigate(true);
+    } catch (error) {
+      console.log("🚀 ~ file: auth.vue:31 ~ singIn ~ error:", error);
+    }
+  };
+
+  if (navigate) {
+    return <Navigate to="/admin" />;
+  }
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email("Invalid email").required("Email is required"),
@@ -13,13 +43,19 @@ const Registration = () => {
       .min(6, "Password must be at least 6 characters")
       .required("Password is required"),
   });
-
-  const handleSubmit = (values) => {
-    console.log(values);
-  };
-
+  // const handleEmail = (e) => {
+  //   setEmail(e.target.value);
+  // };
+  // const handlePassword = (e) => {
+  //   setPass(e.target.value);
+  // };
   return (
     <>
+      {/* <div>
+        <input type="email" onChange={(e) => handleEmail(e)} />
+        <input type="password" onChange={(e) => handlePassword(e)} />
+        <button onClick={() => submit()}>submit</button>
+      </div> */}
       <Box
         sx={{
           width: "100%",
@@ -95,10 +131,27 @@ const Registration = () => {
                 email: "",
                 password: "",
               }}
-              onSubmit={(values, { resetForm }) => {
-                console.log(values);
-                handleSubmit(values);
-                resetForm();
+              onSubmit={async (values, { resetForm }) => {
+                try {
+                  const userToken = await axios.post(
+                    "https://tcp-server-66641451cde5.herokuapp.com/auth/signin",
+                    values
+                  );
+                  const token = userToken.data.token;
+                  const decoded = jwtDecode(token);
+                  localStorage.setItem("userToken", decoded);
+                  axios.defaults.headers.common[
+                    "Authorization"
+                  ] = `Bearer ${token}`;
+
+                  setNavigate(true);
+                } catch (error) {
+                  console.log(
+                    "🚀 ~ file: auth.vue:31 ~ singIn ~ error:",
+                    error
+                  );
+                }
+                // resetForm();
               }}
               validationSchema={validationSchema}
             >

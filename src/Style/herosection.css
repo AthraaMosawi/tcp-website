@@ -1,46 +1,40 @@
 
 .hero-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    margin: 100px auto;
   }
-  
-  .hero-section .hero-section-wrapper {
-    height: 852px;
-    width: 1512px;
-  }
-  
-  .hero-section .div {
-    height: 437px;
-    left: 15%;
-    position: relative;
-    top: 150px;
+  .hero-section .asset{
     width: 70%;
-  }
+    position: relative;
+    border: "1px solid red";
+    margin-bottom:60px;
+}
   
   .hero-section .text-wrapper {
     color: #f2f2f2;
     font-family: "Gilroy-Regular", Helvetica;
     font-size: 25px;
     font-weight: 400;
-    left: 21%;
     letter-spacing: 0;
     line-height: 35px;
-    position: absolute;
+    position: relative;
     text-align: center;
-    top: 246px;
     width: 57%;
     margin-top: 20px;
   }
   
   .hero-section .search {
+    position: relative;
     height: 58px;
-    left: 20%;
-    position: absolute;
-    top: 360px;
-    width: 60%;
-    margin:30px 0px;
+    width: 50%;
+    margin-top:60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .buttonInside{
     position:relative;
@@ -57,42 +51,36 @@
   button{
     position:absolute;
     right: 0px;
-    top: 9px;
     border:none;
-    height:40px;
     width:120px;
     background-color: #f9d53e;
     border-radius:4px;
-    outline:none;
     text-align:center;
     font-weight:bold;
     padding:2px;
+    margin-top: 2px;
+    margin-bottom: 2px;
   }
   button:hover{
     cursor:pointer;
   }
-  .hero-section .asset{
-    width: 100%;
-}
+  
 
   @media only screen and (max-width: 1000px) {
-    .hero-section .div{
-        width: 80%;
-        left: 10%;
-        top: 150px;
+    .hero-section{
+      margin-top: 40px;
+    }
+    .hero-section .asset{
+      margin-bottom: 10px;
+      width: 90%;
     }
     .hero-section .search {
-        width: 90%;
-        left: 3%;
-        top: 250px;
+        width: 80%;
+        margin-top: 45px;
     }
     .hero-section .text-wrapper{
         width: 90%;
-        left: 6%;
-        top: 100px;
-    }
-    .hero-section .hero-section-wrapper{
-      height: 600px;
+        font-size: 20px;
     }
   }
   @media only screen and (max-width: 700px) {}

@@ -2,11 +2,8 @@ import { Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import "../Style/coursessection.css";
 import CardsSlider from "./CardsSlider";
-// import { useTheme } from "@mui/material/styles";
 
 const CoursesSection = () => {
-  // const theme = useTheme();
-
   const scrollToTop = () => {
     window.scrollTo(0, 0);
   };
@@ -86,31 +83,10 @@ const CoursesSection = () => {
             </Link>
           </Button>
         </Box>
-        {/* <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            padding: "10px",
-            gap: "30px",
-            fontFamily: "Gilroy-Regular",
-            border: "1px solid red",
-            [theme.breakpoints.down("sm")]: {
-              gap: "12px",
-            },
-          }}
-        > */}
+
         <CardsSlider />
       </Box>
-      {/* </Box> */}
     </>
   );
-  // const HomeCourseStyles = {
-  //   // Custom styles for parent component A
-  //   display: "flex",
-  //   justifyContent: "center",
-  //   gap: "20px",
-  //   fontFamily: "Custom-Font-A",
-  // };
 };
 export default CoursesSection;

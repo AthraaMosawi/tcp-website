@@ -8,16 +8,18 @@ import image4 from "../Assets/images/img4.png";
 import image5 from "../Assets/images/img5.png";
 import line from "../Assets/images/line.svg";
 import { useTheme } from "@mui/material/styles";
+import { useMediaQuery, ThemeProvider, createTheme } from "@mui/material";
 
 const Mission = () => {
   const theme = useTheme();
+  // const createTheme = createTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
 
   return (
     <>
       <Box
         sx={{
           marginTop: "600px",
-          // border: "1px solid red",
           [theme.breakpoints.down("sm")]: { marginTop: "100px" },
         }}
       ></Box>
@@ -43,17 +45,16 @@ const Mission = () => {
         Empowering underrepresented and underserved women and youth in Iraq
         through high-quality technology education and job opportunities.
       </Typography>
-
       <div className="layer">
         <div className="overlap-group">
-          <img className="vector" alt="Vector" src={line} />
+          <img className="lineVector" alt="Vector" src={line} />
           <img
-            className="img"
+            className="mainVector"
             alt="Vector"
             src="https://file.rendit.io/n/VnorPRCZ5BoPJEvuPnW6.svg"
           />
           <img
-            className="vector-2"
+            className="vector-2-yellow"
             alt="Vector"
             src="https://file.rendit.io/n/RBBHTQVJ28YO7K3LrmN1.svg"
           />

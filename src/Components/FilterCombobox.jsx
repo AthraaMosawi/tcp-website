@@ -1,125 +1,3 @@
-// import * as React from "react";
-// import { TextField, Box, Typography } from "@mui/material";
-// import FormGroup from "@mui/material/FormGroup";
-// import FormControlLabel from "@mui/material/FormControlLabel";
-// import Checkbox from "@mui/material/Checkbox";
-// import Autocomplete from "@mui/material/Autocomplete";
-// import Button from "@mui/joy/Button";
-// import { useTheme } from "@mui/material/styles";
-
-// export default function FilterComboBox() {
-//   const theme = useTheme();
-
-//   const label = { inputProps: { "aria-label": "Checkbox demo" } };
-//   return (
-//     <>
-//       <Box
-//         sx={{
-//           backgroundColor: "#1C2034",
-//           margin: "30px auto",
-//           marginTop: "60px",
-//           padding: "0px 20px",
-//           display: "flex",
-//           justifyContent: "space-between",
-//           alignItems: "center",
-//           width: "80%",
-//           borderRadius: "15px",
-//         }}
-//       >
-//         <Box
-//           sx={{
-//             display: "flex",
-//             justifyContent: "space-between",
-//             alignItems: "center",
-//           }}
-//         >
-//           <Typography gutterBottom sx={{ fontSize: "18px" }}>
-//             Topics
-//           </Typography>
-//           <Autocomplete
-//             disablePortal
-//             id="combo-box-demo"
-//             options={availableCourses}
-//             sx={{
-//               width: "200px",
-//               backgroundColor: "#F4F3F5",
-//               margin: "20px",
-//               borderRadius: "10px",
-//             }}
-//             renderInput={(params) => (
-//               <TextField {...params} label="All Topics" />
-//             )}
-//           />
-//         </Box>
-//         <Box
-//           sx={{
-//             display: "flex",
-//             justifyContent: "space-between",
-//             alignItems: "center",
-//           }}
-//         >
-//           <Typography sx={{ fontSize: "18px" }} gutterBottom>
-//             Schedule
-//           </Typography>
-//           <FormGroup sx={{ marginLeft: "10px", flexDirection: "row" }}>
-//             <FormControlLabel
-//               control={<Checkbox {...label} />}
-//               label="Weekends days"
-//             />
-//             <FormControlLabel
-//               control={<Checkbox {...label} />}
-//               label="Weekdays"
-//             />
-//           </FormGroup>
-//         </Box>
-//         <Box
-//           sx={{
-//             display: "flex",
-//             justifyContent: "space-between",
-//             alignItems: "center",
-//           }}
-//         >
-//           <Typography sx={{ fontSize: "18px" }} gutterBottom>
-//             Format
-//           </Typography>
-//           <FormGroup sx={{ marginLeft: "10px", flexDirection: "row" }}>
-//             <FormControlLabel
-//               control={<Checkbox {...label} />}
-//               label="One Week"
-//             />
-//             <FormControlLabel
-//               control={<Checkbox {...label} />}
-//               label="2 Months"
-//             />
-//           </FormGroup>
-//         </Box>
-//         <Button
-//           id="CoursesButton"
-//           variant="contained"
-//           sx={{
-//             width: "120px",
-//             background:
-//               "linear-gradient(90deg, rgb(23, 200, 190) 0%, rgb(249, 213, 62) 100%)",
-//             borderRadius: "4px",
-//           }}
-//         >
-//           <Typography
-//             variant="h6"
-//             sx={{
-//               fontFamily: "Gilroy-Medium",
-//               fontSize: "15px",
-//               color: "#01011E",
-//             }}
-//           >
-//             Apply Filter
-//           </Typography>
-//         </Button>
-//       </Box>
-//     </>
-//   );
-// }
-
-// const availableCourses = ["Git and GiHub", "React", "JavaScript"];
 import * as React from "react";
 import { useState } from "react";
 import { TextField, Box, Typography, Button } from "@mui/material";
@@ -264,7 +142,14 @@ export default function FilterComboBox({ onApplyFilter }) {
               onChange={(event, value) =>
                 setSelectedStatus(getLabelValue(event.target))
               }
-              label="Coming Soon"
+              label="Open"
+            />
+            <FormControlLabel
+              control={<Checkbox {...label} />}
+              onChange={(event, value) =>
+                setSelectedStatus(getLabelValue(event.target))
+              }
+              label="Upcoming"
             />
           </FormGroup>
         </Box>
@@ -351,4 +236,11 @@ export default function FilterComboBox({ onApplyFilter }) {
   );
 }
 
-const availableCourses = ["Git and GitHub", "React", "JavaScript"];
+const availableCourses = [
+  "Git and GitHub",
+  "React",
+  "JavaScript",
+  "Python",
+  "web Fundamentals",
+  "Fullstack",
+];

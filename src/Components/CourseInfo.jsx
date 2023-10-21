@@ -88,7 +88,7 @@ const CourseInfo = ({ course }) => {
               },
             }}
           >
-            {course.courseFee} IQD
+            {course.fees} IQD
           </Typography>
         </Box>
         {/* /////////////////////////////// */}

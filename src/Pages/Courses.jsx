@@ -4,12 +4,12 @@ import FilterCombobox from "../Components/FilterCombobox";
 import CourseCardTest from "../Components/CourseCardTest";
 import ChooseCourse from "../Components/ChooseCourse";
 import Context from "../Store/filteredData";
-import courses from "../Store/courses";
+import CoursesContext from "../Store/coursesData";
 import { useContext } from "react";
 
 const Courses = () => {
   const theme = useTheme();
-
+  const { courses } = useContext(CoursesContext);
   const { setFilteredCourses, setNotFound, setSearchValue } =
     useContext(Context);
 

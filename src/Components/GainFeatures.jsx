@@ -45,7 +45,7 @@ export default function GainFeatures({ course }) {
               >
                 {/* Understand the fundamental concepts of programming languages and
               how they interact with computers. */}
-                {course.courseGains[0]}
+                {course.courseBenefits[0]}
               </Typography>
             </Box>
             <Box className="turq-vector">
@@ -62,7 +62,7 @@ export default function GainFeatures({ course }) {
               >
                 {/* Gain a comprehensive understanding of JavaScript (JS) including
                 its syntax and how to run JS code. */}
-                {course.courseGains[1]}
+                {course.courseBenefits[1]}
               </Typography>
             </Box>
             <Box className="yellow-vector">
@@ -79,7 +79,7 @@ export default function GainFeatures({ course }) {
               >
                 {/* Develop the ability to troubleshoot common issues and errors
                 that may arise when using JavaScript. */}
-                {course.courseGains[2]}
+                {course.courseBenefits[2]}
               </Typography>
             </Box>
             <Box className="white-vector">
@@ -92,7 +92,7 @@ export default function GainFeatures({ course }) {
               >
                 {/* Master JS skills to create dynamic websites and adhere to best
                 practices when coding. */}
-                {course.courseGains[3]}
+                {course.courseBenefits[3]}
               </Typography>
               <img
                 className="vector-place"
